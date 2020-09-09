@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  # Api Service
+  api:
+    build:
+      context: ./
+      dockerfile: ./docker/build/golang/Dockerfile
+    environment:
+      CORS_ALLOWED_ORIGINS: "http://localhost:8000,http://localhost:5672"
+      API_PORT: "8080"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/go:rw
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: "bridge"
