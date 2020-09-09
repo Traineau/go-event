@@ -1,8 +1,8 @@
 package router
 
 import (
-	"GoEventSourcing/controllers"
 	"github.com/gorilla/mux"
+	"goevent/controllers"
 	"net/http"
 )
 

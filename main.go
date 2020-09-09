@@ -1,6 +1,7 @@
 package main
 
 import (
+	"goevent/database"
 	"goevent/router"
 	"log"
 	"net/http"
@@ -9,6 +10,11 @@ import (
 func main() {
 	port := "8080"
 	newRouter := router.NewRouter()
+
+	err := database.Connect()
+	if err != nil {
+		log.Fatalf("could not connect to db: %v", err)
+	}
 
 	log.Print("\nServer started on port " + port)
 
