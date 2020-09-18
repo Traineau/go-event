@@ -40,4 +40,16 @@ var routes = Routes{
 		Pattern:     "/",
 		HandlerFunc: controllers.RenderHome,
 	},
+	Route{
+		Name:        "List Orders",
+		Method:      "GET",
+		Pattern:     "/orders",
+		HandlerFunc: controllers.GetOrders,
+	},
+	Route{
+		Name:        "Create Order",
+		Method:      "POST",
+		Pattern:     "/order/new",
+		HandlerFunc: controllers.CreateOrder,
+	},
 }
